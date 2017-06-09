@@ -1,10 +1,12 @@
 language: java
 jdk:
   - oraclejdk8
-sudo: true
+sudo: false
 cache:
   directories:
     - $HOME/.m2
+before_install:
+  - chmod +x gradlew
 script:
   - ./mvnw clean
   - ./mvnw test
