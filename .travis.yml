@@ -6,7 +6,7 @@ cache:
   directories:
     - $HOME/.m2
 before_install:
-  - chmod +x gradlew
+  - chmod +x mvnw
 script:
   - ./mvnw clean
   - ./mvnw test
