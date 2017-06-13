@@ -9,8 +9,8 @@ before_install:
   - chmod +x mvnw
 script:
   - ./mvnw clean
-  - ./mvnw test
-  - ./mvnw package -Pprod -DskipTests
+#  - ./mvnw test
+  - ./mvnw package -DskipTests
 branches:
   only:
   - master
