@@ -5,7 +5,7 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>demo</name>
@@ -48,10 +48,14 @@
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>1.2.2</version>
 				<configuration>
+					<appName>travis-heroku</appName>
 					<includeTarget>false</includeTarget>
 					<includes>
-						<include>target/CadSoft-0.1.jar</include>
+						<include>target/demo-0.0.1.jar</include>
 					</includes>
+					<processTypes>
+						<web>java -Dserver.port=$PORT $JAVA_OPTS -jar target/demo-0.0.1.jar</web>
+					</processTypes>
 				</configuration>
 			</plugin>
 		</plugins>
