@@ -18,8 +18,6 @@ class TestController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "THIS IS ANOTHER TESTasdasdasdasdas";
+        return "THIS IS ANOTHER TEST";
     }
-
-    //TEST
 }
