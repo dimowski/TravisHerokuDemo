@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="coralogix" class="com.coralogix.sdk.appenders.CoralogixLogbackAppender">
+    <companyId>testCompany</companyId>
+    <privateKey>someKey123</privateKey>
+    <applicationName>testApp</applicationName>
+</appender>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <springProfile name="dev">
+        <logger name="org.springframework" level="INFO"/>
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="org.springframework" level="WARN"/>
+        <logger name="com.example.demo" level="DEBUG"/>
+    </springProfile>
+</configuration>
