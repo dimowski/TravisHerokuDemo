@@ -20,7 +20,7 @@ public class DemoApplication {
     @RestController
     class TestController {
 
-        @GetMapping("/infolog/{id}")
+        @GetMapping("/info/{id}")
         public String generateInfo(@PathVariable("id") int id) {
             for (int i = 0; i < id; i++) {
                 logger.info("This is an info message");
@@ -28,7 +28,7 @@ public class DemoApplication {
             return "Generated " + id + "logs!";
         }
 
-        @GetMapping("/infolog/{id}")
+        @GetMapping("/error/{id}")
         public String generateError(@PathVariable("id") int id) {
             for (int i = 0; i < id; i++) {
                 logger.error("This is an error message");
@@ -36,7 +36,7 @@ public class DemoApplication {
             return "Generated " + id + "logs!";
         }
 
-        @GetMapping("/infolog/{id}")
+        @GetMapping("/debug/{id}")
         public String generateDebug(@PathVariable("id") int id) {
             for (int i = 0; i < id; i++) {
                 logger.debug("This is an debug message");
