@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -19,13 +20,28 @@ public class DemoApplication {
     @RestController
     class TestController {
 
-        @GetMapping("/hello")
-        public String hello() {
-            logger.debug("This is a debug message");
-            logger.info("This is an info message");
-            logger.warn("This is a warn message");
-            logger.error("This is an error message");
-            return "THIS IS ANOTHER TEST2";
+        @GetMapping("/infolog/{id}")
+        public String generateInfo(@PathVariable("id") int id) {
+            for (int i = 0; i < id; i++) {
+                logger.info("This is an info message");
+            }
+            return "Generated " + id + "logs!";
+        }
+
+        @GetMapping("/infolog/{id}")
+        public String generateError(@PathVariable("id") int id) {
+            for (int i = 0; i < id; i++) {
+                logger.error("This is an error message");
+            }
+            return "Generated " + id + "logs!";
+        }
+
+        @GetMapping("/infolog/{id}")
+        public String generateDebug(@PathVariable("id") int id) {
+            for (int i = 0; i < id; i++) {
+                logger.debug("This is an debug message");
+            }
+            return "Generated " + id + "logs!";
         }
     }
 }
