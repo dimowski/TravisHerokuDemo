@@ -4,7 +4,7 @@
     <appender name="coralogix" class="com.coralogix.sdk.appenders.CoralogixLogbackAppender">
         <companyId>666</companyId>
         <privateKey>testKey</privateKey>
-        <applicationName>testApp</applicationName>
+        <applicationName>travis-heroku</applicationName>
         <subsystemName>backend</subsystemName>
     </appender>
     <root level="debug">
