@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class DemoApplication {
 
+    // Some useless comment
+    
     private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
 
     public static void main(String[] args) {
